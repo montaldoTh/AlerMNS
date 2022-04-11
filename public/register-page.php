@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){ //On verifie si le formulaire a déjà était envoy
             $formErrors[]= 'Les mot de passe ne sont pas identiques';
     
         if(isset($_POST['mail'])) //On verifie dans la base de donnée si le mail est déjà utiliser ou non
-            $mail = $manager->selectMail($_POST['mail']);
+            $mail = $manager->checkMail($_POST['mail']);
             $mail ? $formErrors[]= 'E-mail déjà utilisé, veuillez en saisir un autre' : null; 
 
         if(count($formErrors) > 0) //S'il y a des erreurs les prépare

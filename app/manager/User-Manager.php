@@ -28,8 +28,18 @@ class UserManager extends Manager{
         return $user;
     }
 
+    public function selectByMail(string $mail){
+        $sql = "SELECT id_user FROM user WHERE mail = :mail";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'mail' => $mail
+        ]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     //Permet de vérifier si un email existe en DB
-    public function selectMail(string $mail){ 
+    public function checkMail(string $mail){ 
         $sql = 'SELECT mail FROM user WHERE mail = :mail'; 
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
@@ -37,6 +47,17 @@ class UserManager extends Manager{
         ]);
         $mailPresent= $req->fetch(PDO::FETCH_BOUND); //Ici j'ai choisi d'utiliser FETCH_BOUND afin qu'un boolean soit rendu 
         return $mailPresent;
+    }
+
+    //Permet de vérifier si le bon mot de passe à été renseigner
+    public function checkPw(string $mail){
+        $sql = 'SELECT pasword FROM user WHERE mail = :mail';
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'mail' => $mail
+        ]);
+        $pw = $req->fetch(PDO::FETCH_ASSOC);
+        return $pw;
     }
 
     public function update(){
