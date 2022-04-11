@@ -27,15 +27,16 @@ class UserManager extends Manager{
         $user = (new User())->hydrate($result);
         return $user;
     }
-
+    
     public function selectByMail(string $mail){
-        $sql = "SELECT id_user FROM user WHERE mail = :mail";
+        $sql = "SELECT id FROM user WHERE mail = :mail";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'mail' => $mail
         ]);
         $result = $req->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        $user = (new User())->hydrate($result);
+        return $user;
     }
 
     //Permet de vérifier si un email existe en DB
@@ -56,8 +57,9 @@ class UserManager extends Manager{
         $req->execute([
             'mail' => $mail
         ]);
-        $pw = $req->fetch(PDO::FETCH_ASSOC);
-        return $pw;
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        $user = (new User())->hydrate($result);
+        return $user;
     }
 
     public function update(){

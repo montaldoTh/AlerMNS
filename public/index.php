@@ -19,12 +19,12 @@ if(isset($_POST['submit'])){
 
         if(isset($_POST['pasword']))
             $pw = $manager->checkPw($_POST['mail']);
-            $pw['pasword'] == $_POST['pasword'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
+            $pw->getPasword() == $_POST['pasword'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
 
         if(count($formErrors) > 0)
             throw new Exception(implode("<br />", $formErrors));
         $user = $manager->selectByMail($_POST['mail']);
-        $id = $user['id_user'];
+        $id = $user->getId();
         header("location: /profil.php?id=$id");
     }catch(Exception $e){
         $message = $e->getMessage();
