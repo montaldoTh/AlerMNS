@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){ //On verifie si le formulaire a déjà était envoy
 
         //Quand il y a 0 erreurs, ajoute les données rentré
         $userId = $manager->insert($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['pasword']);
-        header("Location: /index.php?id=$userId");
+        header("Location: /index.php");
     } catch(Exception $e){ //S'il y a des erreurs affecte la variable message de ses dernières pour ensuite les afficher dans le templates
         $message = $e->getMessage();
     }
