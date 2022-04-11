@@ -18,7 +18,7 @@ class UserManager extends Manager{
     }
 
     public function select(int $id){
-        $sql = 'SELECT * FROM user WHERE id = :id';
+        $sql = "SELECT * FROM user WHERE id = :id";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'id' => $id
@@ -26,6 +26,16 @@ class UserManager extends Manager{
         $result = $req->fetch(PDO::FETCH_ASSOC);
         $user = (new User())->hydrate($result);
         return $user;
+    }
+
+    public function selectMail(string $mail){
+        $sql = 'SELECT mail FROM user WHERE mail = :mail';
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'mail' => $mail
+        ]);
+        $mailPresent= $req->fetch(PDO::FETCH_BOUND);
+        return $mailPresent;
     }
 
     public function update(){

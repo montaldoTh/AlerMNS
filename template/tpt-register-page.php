@@ -18,7 +18,7 @@ require '../template/partiels/tpt-top.php'; ?>
     </form>
     <?php if(!empty($message)): ?>
     <div class="alert">
-        <?= $message; var_dump($message) ?>
+        <?= $message; ?>
     </div>
     <?php endif; ?>
 </div>
