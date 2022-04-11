@@ -1,12 +1,20 @@
 <?php 
 
-require '../template/partiels/tpt-top.php';
 require '../app/manager/User-Manager.php';
+$manager = new UserManager;
 
-$manager = new UserManager();
-$users = $manager->selectMail('allgood@think.yes');
-intval($users);
-var_dump($users);
+if(isset($_POST['submit'])){
+    // try{
+    //     $formErrors = [];
+    //     if(empty($_POST['mail']))
+    //         $formErrors[]= 'Veuillez votre E-mail';
 
+    //     if(empty($_POST['password']))
+    //         $formErrors[]= 'Veuillez entrez votre mot de passe';
 
-require '../template/partiels/tpt-bot.php';
+    //     if($_POST['mail'])
+    
+    // }
+}
+
+require '../template/tpt-login-page.php';

@@ -4,8 +4,18 @@
     {
         foreach($data as $key => $value)
         {
-            $key = explode('_',$key);
-            $method = count($key) == 1 ? "set" . ucfirst($key[0]) : "set" . ucfirst($key[0]) . ucfirst($key[1]);
+            $key = explode('_',$key); 
+            $method = count($key) == 1 ? "set" . ucfirst($key[0]) : "set";
+
+            if(count($key) > 1){
+                foreach($key as $k => $v){
+                    $method .= ucfirst($v);
+                }
+            }
+            if(method_exists($this, $method)){
+                $this->$method($value);
+            }
+
             $this->$method($value);
         }
 

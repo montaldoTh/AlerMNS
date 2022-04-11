@@ -28,13 +28,14 @@ class UserManager extends Manager{
         return $user;
     }
 
-    public function selectMail(string $mail){
-        $sql = 'SELECT mail FROM user WHERE mail = :mail';
+    //Permet de vérifier si un email existe en DB
+    public function selectMail(string $mail){ 
+        $sql = 'SELECT mail FROM user WHERE mail = :mail'; 
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'mail' => $mail
         ]);
-        $mailPresent= $req->fetch(PDO::FETCH_BOUND);
+        $mailPresent= $req->fetch(PDO::FETCH_BOUND); //Ici j'ai choisi d'utiliser FETCH_BOUND afin qu'un boolean soit rendu 
         return $mailPresent;
     }
 
