@@ -28,7 +28,7 @@ class UserManager extends Manager{
         return $user;
     }
     
-    public function selectByMail(string $mail){
+    public function selectByMail(string $mail){ //Permet de récuperer un l'ID relié a un e-mail dans la DB
         $sql = "SELECT id FROM user WHERE mail = :mail";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
@@ -52,7 +52,7 @@ class UserManager extends Manager{
 
     //Permet de vérifier si le bon mot de passe à été renseigner
     public function checkPw(string $mail){
-        $sql = 'SELECT pasword FROM user WHERE mail = :mail';
+        $sql = 'SELECT password FROM user WHERE mail = :mail';
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'mail' => $mail
@@ -66,14 +66,14 @@ class UserManager extends Manager{
 
     }
 
-    public function insert(string $lastName, string $firstName, string $mail, string $pasword){
-        $sql = 'INSERT INTO user (lastName, firstName, mail, pasword) VALUES (:lastName, :firstName, :mail, :pasword)';
+    public function insert(string $lastName, string $firstName, string $mail, string $password){
+        $sql = 'INSERT INTO user (lastName, firstName, mail, password) VALUES (:lastName, :firstName, :mail, :password)';
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'lastName' => $lastName,
             'firstName' => $firstName,
             'mail' => $mail,
-            'pasword' => $pasword
+            'password' => $password
         ]);
         return $this->getPdo()->lastInsertId();
     }

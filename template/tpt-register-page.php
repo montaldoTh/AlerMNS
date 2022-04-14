@@ -10,8 +10,8 @@ require '../template/partiels/tpt-top.php'; ?>
         <input type="text" name="lastName">
         <label for="mail">Votre E-mail</label>
         <input type="text" name="mail">
-        <label for="pasword">Entrez un mot de passe</label>
-        <input type="password" name="pasword">
+        <label for="password">Entrez un mot de passe</label>
+        <input type="password" name="password">
         <label for="confirmPsw">Confirmez mot de passe</label>
         <input type="password" name="confirmPsw">
         <input type="submit" name="submit" value="Enregistrer">

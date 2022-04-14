@@ -3,13 +3,13 @@
 abstract class Manager
 {
     protected static $pdo = NULL;
-
+// Le méthode ci dessous nous permet d'instancier PDO une seul et unique fois et de la partager via l'héritage a nos autres manager
     protected function getPdo()
     {
         if(self::$pdo == NULL){
             try
             {
-                self::$pdo = new PDO('mysql:host=localhost;dbname=test','root');
+                self::$pdo = new PDO('mysql:host=localhost;dbname=alert','root');
             }
             catch(PDOException $e)
             {

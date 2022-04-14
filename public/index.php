@@ -1,25 +1,24 @@
 <?php 
 $message=NULL;
-$userId = NULL;
 
 require '../app/manager/User-Manager.php';
 $manager = new UserManager;
-if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php on verifie d'abord que chaque champs est rempli et s'il correspond à une adresse mail en DB puis, si le mot de passe correspond a l'e-mail renseigner
     try{
         $formErrors = [];
         if(empty($_POST['mail']))
             $formErrors[]= 'Veuillez votre E-mail';
 
-        if(empty($_POST['pasword']))
+        if(empty($_POST['password']))
             $formErrors[]= 'Veuillez entrez votre mot de passe';
 
-        if(isset($_POST['mail']))
+        if(isset($_POST['mail'])) //Verification d'e-mail en DB
             $mail = $manager->checkMail($_POST['mail']);
             $mail ? null : $formErrors[]= "l'E-mail renseigner n'est pas existant";
 
-        if(isset($_POST['pasword']))
+        if(isset($_POST['password'])) //Verification du mot passe relié a l'e-mail
             $pw = $manager->checkPw($_POST['mail']);
-            $pw->getPasword() == $_POST['pasword'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
+            $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
 
         if(count($formErrors) > 0)
             throw new Exception(implode("<br />", $formErrors));

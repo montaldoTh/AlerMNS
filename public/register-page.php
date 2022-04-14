@@ -19,13 +19,13 @@ if(isset($_POST['submit'])){ //On verifie si le formulaire a déjà était envoy
         if(empty($_POST['mail'])) //Mail
             $formErrors[]= 'Votre e-mail est obligatoire';
 
-        if(empty($_POST['pasword'])) //MDP
+        if(empty($_POST['password'])) //MDP
             $formErrors[]= 'Le mot de passe est obligatoire';
         
         if(empty($_POST['confirmPsw'])) //Confirmation MDP
             $formErrors[]= 'Veuillez confirmer votre mot de passe';
 
-        if($_POST['pasword'] != $_POST['confirmPsw']) //On verifie si le mdp et la confirmation du MDP sont similaire
+        if($_POST['password'] != $_POST['confirmPsw']) //On verifie si le mdp et la confirmation du MDP sont similaire
             $formErrors[]= 'Les mot de passe ne sont pas identiques';
     
         if(isset($_POST['mail'])) //On verifie dans la base de donnée si le mail est déjà utiliser ou non
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){ //On verifie si le formulaire a déjà était envoy
             throw new Exception(implode("<br />", $formErrors));
 
         //Quand il y a 0 erreurs, ajoute les données rentré
-        $userId = $manager->insert($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['pasword']);
+        $userId = $manager->insert($_POST['lastName'], $_POST['firstName'], $_POST['mail'], $_POST['password']);
         header("Location: /index.php");
     } catch(Exception $e){ //S'il y a des erreurs affecte la variable message de ses dernières pour ensuite les afficher dans le templates
         $message = $e->getMessage();

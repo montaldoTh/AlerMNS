@@ -8,7 +8,7 @@ class User extends Entity {
     private string $mail;
     private string $firstName;
     private string $lastName;
-    private string $pasword;
+    private string $password;
 
     public function getId()
     {
@@ -46,14 +46,14 @@ class User extends Entity {
         return $this;
     }
 
-    public function getPasword()
+    public function getPassword()
     {
-        return $this->pasword;
+        return $this->password;
     }
 
-    public function setPasword($pasword)
+    public function setPassword($password)
     {
-        $this->pasword = $pasword;
+        $this->password = $password;
 
         return $this;
     }
