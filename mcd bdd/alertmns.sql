@@ -186,7 +186,7 @@ CREATE TABLE `type_user` (
 
 INSERT INTO `type_user` (`id_type_user`, `name_type_user`) VALUES
 (1, 'user'),
-(2, 'admin'),
+(2, 'admin');
 -- --------------------------------------------------------
 
 --
@@ -311,7 +311,7 @@ INSERT INTO `users` (`id`, `lastName`, `firstName`, `email`, `creation_date`, `p
 (100, 'Oliver', 'Talley', 'ornare.lectus.ante@hotmail.org', '2023-03-14 20:02:43', 'QLK32GGI8RC', 'user', 2),
 (101, 'Ann', 'Franks', 'sapien.imperdiet@hotmail.net', '2021-09-07 17:05:49', 'BBV91QLK1GO', 'user', 2),
 (102, 'Xantha', 'Avery', 'ac.orci.ut@icloud.com', '2022-04-01 13:47:20', 'CPG01VXJ4XP', 'user', 2),
-(103, 'Hamish', 'O\'connor', 'diam.dictum@outlook.org', '2022-11-12 05:40:08', 'DFM10CQO5BD', 'user', 2),
+(103, 'Hamish', 'connor', 'diam.dictum@outlook.org', '2022-11-12 05:40:08', 'DFM10CQO5BD', 'user', 2),
 (104, 'Dora', 'Irwin', 'feugiat.nec@hotmail.net', '2023-02-03 04:28:02', 'QGV93OQL9DX', 'user', 2),
 (105, 'Desiree', 'Howell', 'non.luctus.sit@icloud.ca', '2022-10-26 21:17:16', 'OPF98WRM7OD', 'user', 2),
 (106, 'Alana', 'Cooper', 'nibh.donec.est@yahoo.org', '2022-11-12 04:47:10', 'UIK83VKS4BQ', 'user', 2),
@@ -359,7 +359,7 @@ INSERT INTO `users` (`id`, `lastName`, `firstName`, `email`, `creation_date`, `p
 (148, 'Shelly', 'Finch', 'ante@yahoo.com', '2021-04-30 18:28:48', 'BML95THL3PD', 'user', 2),
 (149, 'Quinn', 'Rice', 'nam@protonmail.com', '2022-04-12 02:28:41', 'ZGO55HBS7SJ', 'user', 2),
 (150, 'Cameron', 'Hartman', 'sit.amet.ornare@outlook.org', '2022-01-14 16:43:55', 'NUW13XKN2MH', 'user', 2),
-(151, 'Mary', 'O\'donnell', 'magna.duis.dignissim@icloud.ca', '2022-12-11 04:36:48', 'GOV83FIR1CJ', 'user', 2),
+(151, 'Mary', 'donnell', 'magna.duis.dignissim@icloud.ca', '2022-12-11 04:36:48', 'GOV83FIR1CJ', 'user', 2),
 (152, 'Tucker', 'Lynn', 'suscipit.nonummy@aol.ca', '2023-01-09 22:39:39', 'RLX46GTY5OW', 'user', 2),
 (153, 'Isadora', 'Mason', 'fermentum.fermentum@hotmail.ca', '2021-09-03 03:16:51', 'PSI17JST1YQ', 'user', 2),
 (154, 'Minerva', 'Giles', 'ornare.fusce@yahoo.couk', '2021-08-12 19:25:15', 'QHT31CTE1XD', 'user', 2),
