@@ -5,10 +5,13 @@ require_once '../app/Entity/Entity.php';
 
 class User extends Entity {
     private int $id;
-    private string $mail;
-    private string $firstName;
     private string $lastName;
+    private string $firstName;
+    private string $email;
+    private string $creationDate;
     private string $password;
+    private string $typeUser;
+    private string $idTypeUser;
 
     public function getId()
     {
@@ -18,18 +21,6 @@ class User extends Entity {
     public function setId($id)
     {
         $this->id = $id;
-
-        return $this;
-    }
-
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
 
         return $this;
     }
@@ -46,6 +37,42 @@ class User extends Entity {
         return $this;
     }
 
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
     public function getPassword()
     {
         return $this->password;
@@ -58,14 +85,26 @@ class User extends Entity {
         return $this;
     }
 
-    public function getMail()
+    public function getTypeUser()
     {
-        return $this->mail;
+        return $this->typeUser;
     }
 
-    public function setMail($mail)
+    public function setTypeUser($typeUser)
     {
-        $this->mail = $mail;
+        $this->typeUser = $typeUser;
+
+        return $this;
+    }
+
+    public function getIdTypeUser()
+    {
+        return $this->idTypeUser;
+    }
+
+    public function setIdTypeUser($idTypeUser)
+    {
+        $this->idTypeUser = $idTypeUser;
 
         return $this;
     }

@@ -9,7 +9,9 @@ abstract class Manager
         if(self::$pdo == NULL){
             try
             {
-                self::$pdo = new PDO('mysql:host=localhost;dbname=alert','root');
+                // self::$pdo = new PDO('mysql:host=51.77.210.152;dbname=alertmns;port=3306;charset=UTF8','atashi', 'Aedlp1467!');
+
+                self::$pdo = new PDO('mysql:host=localhost;dbname=alert', 'root', '');
             }
             catch(PDOException $e)
             {

@@ -6,75 +6,74 @@ require_once '../app/manager/Manager.php';
 class UserManager extends Manager{
 
     public function selectAll(){
-        $sql = 'SELECT * FROM user';
+        $sql = 'SELECT * FROM users';
         $req = $this->getPdo()->prepare($sql);
         $req->execute();
         $result = [];
         $users= $req->fetchAll(PDO::FETCH_ASSOC);
-        foreach($users as $user){
-            $result[]= (new User())->hydrate($user);
+        if($users != null){
+            foreach($users as $user){
+                $result[] = (new User())->hydrate($user);
+            }
+        }else{
+            $result = null;
         }
         return $result;
     }
 
     public function select(int $id){
-        $sql = "SELECT * FROM user WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'id' => $id
         ]);
         $result = $req->fetch(PDO::FETCH_ASSOC);
-        $user = (new User())->hydrate($result);
+        if($result != null){
+            $user = (new User())->hydrate($result);
+        }else{
+            $user = null;
+        }
         return $user;
     }
     
     public function selectByMail(string $mail){ //Permet de récuperer un l'ID relié a un e-mail dans la DB
-        $sql = "SELECT id FROM user WHERE mail = :mail";
+        $sql = "SELECT * FROM users WHERE email = :email";
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
-            'mail' => $mail
+            'email' => $mail
         ]);
         $result = $req->fetch(PDO::FETCH_ASSOC);
-        $user = (new User())->hydrate($result);
+        if($result != null){
+            $user = (new User())->hydrate($result);
+        }else{ 
+            $user= null; 
+        }
         return $user;
-    }
-
-    //Permet de vérifier si un email existe en DB
-    public function checkMail(string $mail){ 
-        $sql = 'SELECT mail FROM user WHERE mail = :mail'; 
-        $req = $this->getPdo()->prepare($sql);
-        $req->execute([
-            'mail' => $mail
-        ]);
-        $mailPresent= $req->fetch(PDO::FETCH_BOUND); //Ici j'ai choisi d'utiliser FETCH_BOUND afin qu'un boolean soit rendu 
-        return $mailPresent;
-    }
-
-    //Permet de vérifier si le bon mot de passe à été renseigner
-    public function checkPw(string $mail){
-        $sql = 'SELECT password FROM user WHERE mail = :mail';
-        $req = $this->getPdo()->prepare($sql);
-        $req->execute([
-            'mail' => $mail
-        ]);
-        $result = $req->fetch(PDO::FETCH_ASSOC);
-        $user = (new User())->hydrate($result);
-        return $user;
-    }
-
-    public function update(){
-
     }
 
     public function insert(string $lastName, string $firstName, string $mail, string $password){
-        $sql = 'INSERT INTO user (lastName, firstName, mail, password) VALUES (:lastName, :firstName, :mail, :password)';
+        $sql = 'INSERT INTO users(lastName, firstName, email, creation_date, password, type_user, id_type_user) VALUES (:lastName, :firstName, :email, NOW() ,:password , "user" ,2)';
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'lastName' => $lastName,
             'firstName' => $firstName,
-            'mail' => $mail,
+            'email' => $mail,
             'password' => $password
         ]);
         return $this->getPdo()->lastInsertId();
+    }
+
+    public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $type_user, int $id_type_user){
+        $sql="UPDATE users SET lastName = :lastName, firstName= :firstName, email= :email, creation_date= NOW() ,password= :password , type_user = :type_user , id_type_user = :id_type_user, password= :password WHERE id =  :id";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute([
+            'id' => $id,
+            'lastName' => $lastName,
+            'firstName' => $firstName,
+            'email' => $mail,
+            'password' => $password,
+            'type_user' => $type_user,
+            'id_type_user' => $id_type_user
+        ]);
     }
 }

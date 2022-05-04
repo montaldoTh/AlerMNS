@@ -16,5 +16,7 @@ require '../template/partiels/tpt-top.php'; ?>
     <?php endif;?>
 </div>
 
+<a href="register-page.php">Pas inscit ? Inscrivez-vous en cliquant ici!</a>
+
 
 <?php require '../template/partiels/tpt-bot.php'; ?>
