@@ -6,12 +6,14 @@ abstract class Manager
 // Le méthode ci dessous nous permet d'instancier PDO une seul et unique fois et de la partager via l'héritage a nos autres manager
     protected function getPdo()
     {
-        if(self::$pdo == NULL){
+        if(self::$pdo == NULL){ // Si PDO n'est pas instancier
             try
             {
-                // self::$pdo = new PDO('mysql:host=51.77.210.152;dbname=alertmns;port=3306;charset=UTF8','atashi', 'Aedlp1467!');
+                // Ce connecte a la base de donnée
 
-                self::$pdo = new PDO('mysql:host=localhost;dbname=alert', 'root', '');
+                self::$pdo = new PDO('mysql:host=51.77.210.152;dbname=alertmns;port=3306;charset=UTF8','atashi', 'Aedlp1467!');
+
+                // self::$pdo = new PDO('mysql:host=localhost;dbname=alert', 'root', '');
             }
             catch(PDOException $e)
             {
@@ -19,6 +21,7 @@ abstract class Manager
                 die;
             }
         }
+        // Sinon retourne PDO
 
         return self::$pdo;
     }

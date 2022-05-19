@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: darkgrey;
+}
+
+.formConnexion, .inputBox{
+display: flex;
+flex-direction: column;
+justify-content: space-around;      
+}
+.inputBox{
+margin-bottom: 10px;
+margin-top: 10px;
+}
+.formConnexion, .formInscription, .mainView{
+border: 2px solid rgba(0, 0, 0, 0.43);
+border-radius: 30px;
+padding: 7vh;
+background-color: rgb(223, 223, 223);
+}
+
+.logBtn, .regBtn{
+background-color: black;
+color: white;
+border-radius: 6px;
+}
+
+label{
+margin-bottom: 5px;
+margin-top: 5px;
+}
+
+.choiceRow{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.alert{
+    margin: 7px;
+}
+
+.logBtn, .regBtn{
+    margin: 5px ; 
+}

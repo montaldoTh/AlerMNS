@@ -5,6 +5,7 @@ require_once '../app/manager/Manager.php';
 
 class UserManager extends Manager{
 
+    // Requete SELECT toute la table
     public function selectAll(){
         $sql = 'SELECT * FROM users';
         $req = $this->getPdo()->prepare($sql);
@@ -21,6 +22,7 @@ class UserManager extends Manager{
         return $result;
     }
 
+    // SELECT sur 1 utilisateur
     public function select(int $id){
         $sql = "SELECT * FROM users WHERE id = :id";
         $req = $this->getPdo()->prepare($sql);
@@ -36,6 +38,7 @@ class UserManager extends Manager{
         return $user;
     }
     
+    // SELECT via EMail pour tester l'existance d'un mail pour la connexion (principalement)
     public function selectByMail(string $mail){ //Permet de récuperer un l'ID relié a un e-mail dans la DB
         $sql = "SELECT * FROM users WHERE email = :email";
         $req = $this->getPdo()->prepare($sql);
@@ -51,6 +54,7 @@ class UserManager extends Manager{
         return $user;
     }
 
+    // INSERT / Créer 
     public function insert(string $lastName, string $firstName, string $mail, string $password){
         $sql = 'INSERT INTO users(lastName, firstName, email, creation_date, password, type_user, id_type_user) VALUES (:lastName, :firstName, :email, NOW() ,:password , "user" ,2)';
         $req = $this->getPdo()->prepare($sql);
@@ -63,6 +67,7 @@ class UserManager extends Manager{
         return $this->getPdo()->lastInsertId();
     }
 
+    // UPDATE / Met a jour
     public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $type_user, int $id_type_user){
         $sql="UPDATE users SET lastName = :lastName, firstName= :firstName, email= :email, creation_date= NOW() ,password= :password , type_user = :type_user , id_type_user = :id_type_user, password= :password WHERE id =  :id";
         $req = $this->getPdo()->prepare($sql);

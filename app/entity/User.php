@@ -1,9 +1,11 @@
 <?php 
 
-require_once '../app/Entity/Entity.php';
+require_once '../app/entity/Entity.php';
 
 
 class User extends Entity {
+
+    // Toute les propriétés d'un Utilisateur de table
     private int $id;
     private string $lastName;
     private string $firstName;
@@ -13,6 +15,7 @@ class User extends Entity {
     private string $typeUser;
     private string $idTypeUser;
 
+    // Accesseurs 
     public function getId()
     {
         return $this->id;
@@ -107,5 +110,13 @@ class User extends Entity {
         $this->idTypeUser = $idTypeUser;
 
         return $this;
+    }
+
+    /**
+     * Get the value of pseudo
+     */ 
+    public function getPseudo()
+    {
+        return $this->pseudo;
     }
 }

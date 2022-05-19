@@ -1,7 +1,9 @@
 <?php 
+
 $message=NULL;
 
 require '../app/manager/User-Manager.php';
+
 $manager = new UserManager;
 if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php on verifie d'abord que chaque champs est rempli et s'il correspond à une adresse mail en DB puis, si le mot de passe correspond a l'e-mail renseigner
     try{
