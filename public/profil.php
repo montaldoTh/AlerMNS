@@ -12,7 +12,7 @@ if(isset($_GET['id'])){
 
 $task = "read";
 
-if(array_key_exists('task', $_GET)){
+if(isset($_GET['task'])){
     $task = $_GET['task'];
 }
 
@@ -20,6 +20,6 @@ if($task == "write"){
     
 } else {
     $messages = $managerM->selectMsgNSndr();
-}
+}   
 
 require '../template/tpt-profil-page.php';
