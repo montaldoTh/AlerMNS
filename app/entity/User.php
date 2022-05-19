@@ -10,7 +10,7 @@ class User extends Entity {
     private string $lastName;
     private string $firstName;
     private string $email;
-    private string $creationDate;
+    private string $registerDate;
     private string $password;
     private string $typeUser;
     private string $idTypeUser;
@@ -64,14 +64,14 @@ class User extends Entity {
         return $this;
     }
 
-    public function getCreationDate()
+    public function getRegisterDate()
     {
-        return $this->creationDate;
+        return $this->registerDate;
     }
 
-    public function setCreationDate($creationDate)
+    public function setRegisterDate($registerDate)
     {
-        $this->creationDate = $creationDate;
+        $this->registerDate = $registerDate;
 
         return $this;
     }

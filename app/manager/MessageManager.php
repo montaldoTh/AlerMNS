@@ -21,6 +21,15 @@ class MessageManager extends Manager{
         }
         return $result;
     }
+
+    public function selectMsgNSndr(){
+        $sql= 'SELECT users.lastName, users.firstName, message_envoye_users.date_d_envoi, message_envoye_users.texte FROM message_envoye_users
+        INNER JOIN users ON message_envoye_users.id_users = users.id';
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute();
+        $messages = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $messages;
+    }
      
 }
 ?>

@@ -19,11 +19,7 @@ if(array_key_exists('task', $_GET)){
 if($task == "write"){
     
 } else {
-    $messages = $managerM->selectAll();
-    var_dump($messages);
-    // get();
+    $messages = $managerM->selectMsgNSndr();
 }
-
-var_dump($task);
 
 require '../template/tpt-profil-page.php';

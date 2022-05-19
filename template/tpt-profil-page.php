@@ -1,5 +1,40 @@
 <?php require '../template/partiels/tpt-top.php' ?>
 
+<div class="chattingBox">
+    <div class="messagesBox">
+        <h5>Alert</h5>
+        <?php foreach($messages as $message) : ?>
+            <div class="messages">
+                <div class="userBox">
+                    <span><?= $message['date_d_envoi'] . ' | ' ?></span>
+                    <span><?= $message['lastName'] . ' ' . $message['firstName'] ?></span>
+                </div>
+                <div class="messageBox">
+                    <p><?= $message['texte'] ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+    </div>
+    <div class="userInput">
+        <form class="formUser" action="post">
+            <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
+            <textarea name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
+        </form>
+    </div>
+</div>
+
+
+
+
+<?php require '../template/partiels/tpt-top.php' ?>
+
+
+
+
+
+
+
+
 <!-- <div class="groupeNavbar">
     <nav>
         <ul>    
@@ -21,20 +56,3 @@
         </div>
     </nav>
 </div> -->
-
-    <div class="messages">
-        <div class="message">
-            <span class="date">12:78</span>
-            <span class="author">Machin</span>
-            <span class="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptate recusandae repellendus consequatur rem! Ex minima, ratione voluptatem laudantium nesciunt laborum maiores ab iste, explicabo dolorum dolore officia dolores eum?</span>
-        </div>
-    </div>
-    <div class="userInput">
-        <form action="">
-            <p><?= ucfirst($user->getLastName()) ?></p>
-            <input type="text" name="texte" id="texte" placeholder="Ecrivez votre message">
-        </form>
-    </div>
-
-
-<?php require '../template/partiels/tpt-top.php' ?>
