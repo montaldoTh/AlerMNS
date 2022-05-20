@@ -3,15 +3,16 @@ require '../template/partiels/tpt-top.php'; ?>
 
 <div class="formConnexion">
     <h1>Alert</h1>
+    <span id="date_time"></span>
     <h2>Connexion</h2>
     <form method="post">
         <div class="inputBox">
             <label for="mail">Mail</label>
-            <input type="text" name="mail" placeholder="Enter your mail">
+            <input class="inputMail" type="text" name="mail" placeholder="Enter your mail">
         </div>
         <div class="inputBox">
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Enter your password">
+            <input class="inputPassword"type="password" name="password" placeholder="Enter your password">
         </div>
         <input type="submit" name="submit" class="logBtn" value="Connexion">
     </form>

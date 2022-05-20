@@ -4,19 +4,20 @@ require '../template/partiels/tpt-top.php'; ?>
 
 <div class="formInscription">
     <h1>Alert</h1>
+    <span id="date_time"></span>
     <h2>Inscription</h2>
         <form  method="POST">
             <div class="inputBox">
                 <label for="firstName">Prénom</label>
-                <input type="text" name="firstName" placeholder="Veuillez saissir votre Prénom">
+                <input class="firstName" type="text" name="firstName" placeholder="Veuillez saissir votre Prénom">
             </div>
             <div class="inputBox">
                 <label for="lastName">Nom</label>
                 <input type="text" name="lastName" placeholder="votre Nom">
             </div>
             <div class="inputBox">
-                <label for="mail">E-Mail</label>
-                <input type="text" name="mail" placeholder="votre Mail">
+                <label  for="mail">E-Mail</label>
+                <input class="inputMail"type="text" name="mail" placeholder="votre Mail">
             </div>
             <div class="inputBox">
                 <label for="password">Mot de passe</label>
