@@ -4,91 +4,91 @@ require_once '../app/entity/Entity.php';
 
 class Message extends Entity {
 
-    private int $idMessage;
-    private string $texte;
-    private string $dateDEnvoi;
-    private string $destinataire;
+    private int $idMsg;
+    private string $content;
+    private string $sendingDate;
+    private string $recipient;
     private int $idUsers;
 
     
 
 
     /**
-     * Get the value of idMessage
+     * Get the value of idMsg
      */ 
-    public function getIdMessage()
+    public function getIdMsg()
     {
-        return $this->idMessage;
+        return $this->idMsg;
     }
 
     /**
-     * Set the value of idMessage
+     * Set the value of idMsg
      *
      * @return  self
      */ 
-    public function setIdMessage($idMessage)
+    public function setIdMsg($idMsg)
     {
-        $this->idMessage = $idMessage;
+        $this->idMsg = $idMsg;
 
         return $this;
     }
 
     /**
-     * Get the value of texte
+     * Get the value of content
      */ 
-    public function getTexte()
+    public function getContent()
     {
-        return $this->texte;
+        return $this->content;
     }
 
     /**
-     * Set the value of texte
+     * Set the value of content
      *
      * @return  self
      */ 
-    public function setTexte($texte)
+    public function setContent($content)
     {
-        $this->texte = $texte;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get the value of dateDEnvoi
+     * Get the value of sendingDate
      */ 
-    public function getDateDEnvoi()
+    public function getSendingDate()
     {
-        return $this->dateDEnvoi;
+        return $this->sendingDate;
     }
 
     /**
-     * Set the value of dateDEnvoi
+     * Set the value of sendingDate
      *
      * @return  self
      */ 
-    public function setDateDEnvoi($dateDEnvoi)
+    public function setSendingDate($sendingDate)
     {
-        $this->dateDEnvoi = $dateDEnvoi;
+        $this->sendingDate = $sendingDate;
 
         return $this;
     }
 
     /**
-     * Get the value of destinataire
+     * Get the value of recipient
      */ 
-    public function getDestinataire()
+    public function getRecipient()
     {
-        return $this->destinataire;
+        return $this->recipient;
     }
 
     /**
-     * Set the value of destinataire
+     * Set the value of recipient
      *
      * @return  self
      */ 
-    public function setDestinataire($destinataire)
+    public function setRecipient($recipient)
     {
-        $this->destinataire = $destinataire;
+        $this->recipient = $recipient;
 
         return $this;
     }

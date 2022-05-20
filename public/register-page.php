@@ -29,8 +29,8 @@ if(isset($_POST['submit'])){ //On verifie si le formulaire a déjà était envoy
         }
         if(isset($_POST['mail'])){ //On verifie dans la base de donnée si le mail est déjà utiliser ou non
             $mail = $manager->selectByMail($_POST['mail']);
-            if($mail == null){
-                $mail ? $formErrors[]= 'E-mail déjà utilisé, veuillez en saisir un autre' : null; 
+            if($mail != null){
+                $formErrors[]= 'E-mail déjà utilisé, veuillez en saisir un autre';
             }
         }
         if(count($formErrors) > 0){ //S'il y a des erreurs les prépare

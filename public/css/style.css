@@ -3,12 +3,12 @@
     flex-direction: row;
     height: 100vh;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     text-align: center;
     background-color: darkgrey;
 }
 
-.formConnexion, .inputBox, .chattingBox, .messagesBox{
+.formConnexion, .inputBox{
 display: flex;
 flex-direction: column;
 justify-content: space-around;      
@@ -17,7 +17,7 @@ justify-content: space-around;
 margin-bottom: 10px;
 margin-top: 10px;
 }
-.formConnexion, .formInscription, .mainView, .chattingBox{
+.formConnexion, .formInscription, .mainView{
 border: 2px solid rgba(0, 0, 0, 0.43);
 border-radius: 30px;
 padding: 7vh;
