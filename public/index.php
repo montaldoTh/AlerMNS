@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php
         }
         if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
             $pw = $manager->selectByMail($_POST['mail']);
-            if($pw != NULL){
+            if(password_verify($pw != NULL,$user['password'])){
                 $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
             }
         }
