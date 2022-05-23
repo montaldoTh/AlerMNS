@@ -18,7 +18,7 @@ function date_time(id) {
     if (s < 10) {
         s = "0" + s;
     }
-    resultat = 'Nous sommes le ' + days[day] + ' ' + d + ' ' + months[month] + ' ' + year + ' il est ' + h + ':' + m + ':' + s;
+    resultat = days[day] + ' ' + d + ' ' + months[month] + ' ' + year + ' il est ' + h + ':' + m + ':' + s;
     document.getElementById(id).innerHTML = resultat;
     setTimeout('date_time("' + id + '");', '1000');
     return true;

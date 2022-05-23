@@ -13,28 +13,29 @@ if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php
         }
         if(empty($_POST['password'])){
             $formErrors[]= 'Veuillez entrez votre mot de passe';
-        }
-        if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
-            $pw = $manager->selectByMail($_POST['mail']);
-            if(password_verify($pw != NULL,$user['password'])){
-                $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
-            }
-        }
-        if(!empty($_POST['mail'])){ //Verification d'e-mail en DB
+
+        }if(!empty($_POST['mail'])){ //Verification d'e-mail en DB
             $mail = $manager->selectByMail($_POST['mail']);
             if($mail != null){
-                $mail->getEmail() ? null : $formErrors[]= "l'E-mail renseigner n'est pas existant";
+                $mail->getEmail() ? null : $formErrors[]= "login failed";
+            }if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
+            $pw = $manager->selectByMail($_POST['mail']);
+            if($pw != NULL){
+                $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'login failed';
             }
-        }
-        if(count($formErrors) > 0){
-            throw new Exception(implode("<br />", $formErrors));
-        }
-        $user = $manager->selectByMail($_POST['mail']);
-        $id = $user->getId();
-        header("location: /profil.php?id=$id");
-    }catch(Exception $e){
-        $message = $e->getMessage();
+        }   
+        
     }
-}
+            if(count($formErrors) > 0){
+                throw new Exception(implode("<br />", $formErrors));
+            }
+            $user = $manager->selectByMail($_POST['mail']);
+            $id = $user->getId();
+            header("location: /profil.php?id=$id");
+        }catch(Exception $e){
+            $message = $e->getMessage();
+        }
+    }
+
 
 require '../template/tpt-login-page.php';

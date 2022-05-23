@@ -13,7 +13,7 @@ require '../template/partiels/tpt-top.php'; ?>
             </div>
             <div class="inputBox">
                 <label for="lastName">Nom</label>
-                <input type="text" name="lastName" placeholder="votre Nom">
+                <input class="lastName" type="text" name="lastName" placeholder="votre Nom">
             </div>
             <div class="inputBox">
                 <label  for="mail">E-Mail</label>
@@ -21,11 +21,11 @@ require '../template/partiels/tpt-top.php'; ?>
             </div>
             <div class="inputBox">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" placeholder="votre Mot de passe">
+                <input class="inputPassword" type="password" name="password" placeholder="votre Mot de passe">
             </div>
             <div class="inputBox">
                 <label for="confirmPsw">Confirmer Mot de passe</label>
-                <input type="password" name="confirmPsw" placeholder="Réécrivez votre Mot de passe">
+                <input class="inputPassword"type="password" name="confirmPsw" placeholder="Réécrivez votre Mot de passe">
             </div>
             
             <input type="submit" name="submit" class="regBtn" value="Inscription">
