@@ -57,7 +57,7 @@ class UserManager extends Manager{
     // INSERT / Créer 
     public function insert(string $lastName, string $firstName, string $mail, string $password){
         $sql = 'INSERT INTO users(lastName, firstName, email, registerDate, password, type_user, id_type_user) VALUES (:lastName, :firstName, :email, NOW() ,:password , "user" ,2)';
-        $hash = password_hash($password, PASSWORD_DEFAULT);      
+        $hash = password_hash($password, PASSWORD_ARGON2I);      
 
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
@@ -72,7 +72,7 @@ class UserManager extends Manager{
     // UPDATE / Met a jour
     public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $type_user, int $id_type_user){
         $sql="UPDATE users SET lastName = :lastName, firstName= :firstName, email= :email, registerDate= NOW() ,password= :password , type_user = :type_user , id_type_user = :id_type_user, password= :password WHERE id =  :id";
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $hash = password_hash($password, PASSWORD_ARGON2I);
         
         $req = $this->getPdo()->prepare($sql);
         $req->execute([

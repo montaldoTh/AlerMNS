@@ -1,11 +1,11 @@
 .container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: darkgrey;
+    background-color: #3474817a;
 }
 .inputMail, .inputPassword, .firstName, .lastName {
     border: 2px solid rgba(43, 99, 220, 0.355);
@@ -21,8 +21,8 @@ flex-direction: column;
 justify-content: space-around;      
 }
 .inputBox{
-margin-bottom: 20px;
-margin-top: 20px;
+margin-bottom: 5px;
+margin-top: 5px;
 
 
 }
@@ -69,4 +69,62 @@ a {
     text-decoration: none;
     color: black;
     margin-top:20px;
+}
+.icone-verif {
+    width: 20px;
+    /* right: 27px; */
+    /* top: 57px; */
+    display: none;
+}
+.message-alerte {
+    margin: 0px 23px;
+    color: crimson;
+    display: none;
+}
+.ligne {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+}
+.l1, .l2, .l3 {
+    width: 30%;
+    height: 5px;
+    margin: 15px 5px 20px;
+    position: relative;
+    display: none;
+}
+.l1 {
+    background: rgb(182,182,13);
+}
+.l2 {
+    background: rgb(151,85,85);
+}
+.l3 {
+    background: green;
+}
+.ligne span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+button {
+    display: block;
+    margin: 30px auto;
+    outline: 0;
+    background: rgb(250,165,9);
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background: rgb(252,181,49);
+}
+button:active {
+    background: rgb(250,165,9);
 }

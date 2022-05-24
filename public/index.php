@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $message=NULL;
 
 require '../app/manager/User-Manager.php';
@@ -19,9 +21,9 @@ if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php
             if($mail != null){
                 $mail->getEmail() ? null : $formErrors[]= "login failed";
             }if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
-            $pw = $manager->selectByMail($_POST['mail']);
+            $pw = $mail->getPassword();
             if($pw != NULL){
-                $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'login failed';
+                password_verify($_POST['password'], $pw) ? null : $formErrors[]= 'login failed';
             }
         }   
         
