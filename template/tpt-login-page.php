@@ -1,9 +1,9 @@
 <?php 
 require '../template/partiels/tpt-top.php'; ?>
-
+<h1>Alert</h1>  
 <div class="formConnexion">
-    <h1>Alert</h1>
-    <span id="date_time"></span>
+
+      
     <h2>Connexion</h2>
     <form method="post">
         <div class="inputBox">

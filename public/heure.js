@@ -67,18 +67,16 @@ inpUtilisateurP.addEventListener('input', (e) => {
         //masquer le span 
         allSpan[0].style.display = "none"
         verif[0] = 1
-
-
     }
+
     else {
         allImg[0].style.display = "inline"
         allImg[0].src = "ressources/error.svg"
         allSpan[0].style.display = "inline"
-
-
     }
-    afficher()
 
+
+    afficher()
 })
 // la saisie du nom de l'user
 let inpUtilisateurN = document.querySelector('#lastName');
@@ -95,7 +93,7 @@ inpUtilisateurN.addEventListener('input', (e) => {
         //masquer le span 
         allSpan[1].style.display = "none"
         verif[1] = 1
-        console.log(verif);
+
 
     }
     else {
@@ -106,6 +104,7 @@ inpUtilisateurN.addEventListener('input', (e) => {
 
     }
     afficher()
+
 
 })
 // controler le champ mail 
@@ -131,6 +130,7 @@ inpMail.addEventListener('input', (e) => {
 
     }
     afficher()
+
 })
 
 // le mot de passe, test de complexite
@@ -202,8 +202,10 @@ inpMdp.addEventListener('input', (e) => {
             allSpan[5].style.display = "none"
             allSpan[6].style.display = "none"
             allImg[3].style.display = "none"
+
     }
     afficher()
+
 })
 //confirmation
 let inpConfirme = document.querySelector('#mdpconf')
@@ -214,11 +216,13 @@ inpConfirme.addEventListener('input', (e) => {
         allImg[4].style.display = "inline"
         allImg[4].src = "ressources/check.svg"
         verif[4] = 1
-        console.log(verif);
+
     }
     else if
         (e.target.value < 1) {
         allImg[4].style.display = "none"
+
+
 
     }
 
@@ -228,6 +232,6 @@ inpConfirme.addEventListener('input', (e) => {
         allImg[4].src = "ressources/error.svg"
 
     }
-    afficher()
+    afficher();
 
 })

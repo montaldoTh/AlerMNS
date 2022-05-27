@@ -1,8 +1,9 @@
 <?php require '../template/partiels/tpt-top.php' ?>
+<h1>Alert</h1>
 
 <div class="chattingBox">
     <div class="messagesBox">
-        <h5>Alert</h5>
+        
         <?php foreach($messages as $message) : ?>
             <div class="messages">
                 <div class="userBox">
@@ -18,7 +19,7 @@
     <div class="userInput">
         <form class="formUser" action="post">
             <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
-            <textarea name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
+            <textarea  name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
         </form>
     </div>
 </div>
@@ -26,7 +27,7 @@
 
 
 
-<?php require '../template/partiels/tpt-top.php' ?>
+<?php require '../template/partiels/tpt-bot.php' ?>
 
 
 

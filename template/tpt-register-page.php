@@ -1,45 +1,44 @@
 <?php
 
 require '../template/partiels/tpt-top.php'; ?>
-
+<h1>Alert</h1>  
 <div class="formInscription">
-    <h1>Alert</h1>
-    <p id="date_time"></p>
+      
     <h2>Inscription</h2>
-        <form  method="POST">
+        <form class="form"method="POST" >
             <div class="inputBox">
-                <label for="firstName">Prénom</label>
-                <input class="firstName" type="text" name="firstName" placeholder="Veuillez saissir votre Prénom" maxlength="25" id="firstName" required >
+                <label for="firstName">Prénom</label>                
+                <input class="firstName" type="text" name="firstName" placeholder="Veuillez saisir votre Prénom" maxlength="25" id="firstName" required >
                 <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">
-                    <span class="message-alerte">25 caractères maximum</span>
+                    <span class="message-alerte">25 caractères maximum</span>                
             </div>
             <div class="inputBox">
-                <label for="lastName">Nom</label>
+                <label for="lastName">Nom</label>            
                 <input class="lastName" type="text" name="lastName" placeholder="votre Nom" maxlength="50" id="lastName" required>
                 <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">
-                    <span class="message-alerte">50 caractères maximum</span>
+                    <span class="message-alerte">50 caractères maximum</span>                
             </div>
             <div class="inputBox">
-                <label  for="mail">E-Mail</label>
+                <label  for="mail">E-Mail</label>               
                 <input class="inputMail"type="text" name="mail" placeholder="votre Mail" id="email" required>
                 <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">
-                    <span class="message-alerte">Rentrez un email valide.</span>
+                    <span class="message-alerte">Rentrez un email valide.</span>                
             </div>
             <div class="inputBox">
-                <label for="password">Mot de passe</label>
+                <label for="password">Mot de passe</label>                
                 <input class="inputPassword" type="password" name="password" placeholder="votre Mot de passe" id="mdp" required >
                 <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">
-                    <span class="message-alerte">Un symbole, une lettre minuscule, un chiffre.</span>
-                    <div class="ligne">
+                <span class="message-alerte">Un symbole, une lettre minuscule et  Majuscule, un chiffre.</span>   
+                    <div class="ligne">                        
                         <div class="l1"><span>faible</span></div>
                         <div class="l2"><span>moyen</span></div>
-                        <div class="l3"><span>fort</span></div>
-                    </div>
+                        <div class="l3"><span>fort</span></div>                        
+                    </div>                
             </div>
             <div class="inputBox">
-                <label for="confirmPsw">Confirmer Mot de passe</label>
-                <input class="inputPassword"type="password" name="confirmPsw" placeholder="Confirmez votre mot de passe"id="mdpconf" required>
-                <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">
+                <label for="confirmPsw">Confirmation Mot de passe</label>            
+                <input class="inputPassword"type="password" name="confirmPsw" placeholder="Confirmez"id="mdpconf" required>
+                <img src="ressources/check.svg" alt="icone de validation" class="icone-verif">                
             </div>
             
             <button type="submit" name="submit" class="regBtn" id="btn"value="Inscription">Création du compte</button>
