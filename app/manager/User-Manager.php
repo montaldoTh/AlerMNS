@@ -12,7 +12,7 @@ class UserManager extends Manager{
         $req = $this->getPdo()->prepare($sql);
         $req->execute();
         $result = [];
-        $users= $req->fetchAll(PDO::FETCH_ASSOC);
+        $users= $req->fetchAll();
         if($users != null){
             foreach($users as $user){
                 $result[] = (new User())->hydrate($user);
@@ -30,7 +30,7 @@ class UserManager extends Manager{
         $req->execute([
             'id' => $id
         ]);
-        $result = $req->fetch(PDO::FETCH_ASSOC);
+        $result = $req->fetch();
         if($result != null){
             $user = (new User())->hydrate($result);
         }else{
@@ -46,7 +46,7 @@ class UserManager extends Manager{
         $req->execute([
             'email' => $mail
         ]);
-        $result = $req->fetch(PDO::FETCH_ASSOC);
+        $result = $req->fetch();
         if($result != null){
             $user = (new User())->hydrate($result);
         }else{ 
@@ -57,28 +57,33 @@ class UserManager extends Manager{
 
     // INSERT / Créer 
     public function insert(string $lastName, string $firstName, string $mail, string $password){
-        $sql = 'INSERT INTO users(lastName, firstName, email, creation_date, password, type_user, id_type_user) VALUES (:lastName, :firstName, :email, NOW() ,:password , "user" ,2)';
+        $sql = 'INSERT INTO users(lastName, firstName, email, registerDate, password, typeUser, id_type_user) VALUES (:lastName, :firstName, :email, NOW() ,:password , "user" ,2)';
+        $hash = str_replace('$argon2i$v=19$m=65536,t=4,p=1$', '', password_hash($password, PASSWORD_ARGON2I));
+        
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'lastName' => $lastName,
             'firstName' => $firstName,
             'email' => $mail,
-            'password' => $password
+            'password' => $hash
         ]);
+
         return $this->getPdo()->lastInsertId();
     }
 
     // UPDATE / Met a jour
-    public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $type_user, int $id_type_user){
+    public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $typeUser, int $id_type_user){
         $sql="UPDATE users SET lastName = :lastName, firstName= :firstName, email= :email, creation_date= NOW() ,password= :password , type_user = :type_user , id_type_user = :id_type_user, password= :password WHERE id =  :id";
+        $hash = password_hash($password, PASSWORD_ARGON2I);
+
         $req = $this->getPdo()->prepare($sql);
         $req->execute([
             'id' => $id,
             'lastName' => $lastName,
             'firstName' => $firstName,
             'email' => $mail,
-            'password' => $password,
-            'type_user' => $type_user,
+            'password' => $hash,
+            'typeUser' => $type_user,
             'id_type_user' => $id_type_user
         ]);
     }

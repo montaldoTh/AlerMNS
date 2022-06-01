@@ -18,6 +18,8 @@
 }
 
 .messagesBox{
+    display: flex;
+    flex-direction: column;
     height: 90%;
 }
 
@@ -42,7 +44,7 @@
     align-items: center;
 }
 
-.userInfo, .userList{
+.userInfo, .userList, .groupeBar{
     display: flex;
     flex-direction: column;
     padding: 1vw;

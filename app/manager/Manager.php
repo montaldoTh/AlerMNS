@@ -11,9 +11,15 @@ abstract class Manager
             {
                 // Ce connecte a la base de donnée
 
-                // self::$pdo = new PDO('mysql:host=51.77.210.152;dbname=alertmns;port=3306;charset=UTF8','atashi', 'Aedlp1467!');
+                // self::$pdo = new PDO('mysql:host=51.77.210.152;dbname=alertmns;port=3306;charset=UTF8','atashi', 'Aedlp1467!',[
+                //     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                //     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                // ] );
 
-                self::$pdo = new PDO('mysql:host=localhost;dbname=alert', 'root', '');
+                self::$pdo = new PDO('mysql:host=localhost;dbname=alert', 'root', '',[
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                ]);
             }
             catch(PDOException $e)
             {
@@ -26,4 +32,4 @@ abstract class Manager
         return self::$pdo;
     }
 
-}
+}   

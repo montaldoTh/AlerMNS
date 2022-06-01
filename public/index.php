@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 $message=NULL;
 
@@ -14,18 +15,20 @@ if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php
         if(empty($_POST['password'])){
             $formErrors[]= 'Veuillez entrez votre mot de passe';
         }
-        if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
-            $pw = $manager->selectByMail($_POST['mail']);
-            if($pw != NULL){
-                $pw->getPassword() == $_POST['password'] ? null : $formErrors[]= 'Le mot de passe est faux, veuillez saissir le bon mot de passe';
-            }
-        }
+        
         if(!empty($_POST['mail'])){ //Verification d'e-mail en DB
             $mail = $manager->selectByMail($_POST['mail']);
-            if($mail != null){
-                $mail->getEmail() ? null : $formErrors[]= "l'E-mail renseigner n'est pas existant";
+            if($mail == null){
+                $formErrors[]= "Connexion impossible, verifier vos identifiants";
+            }if(!empty($_POST['password'])){ //Verification du mot passe relié a l'e-mail
+                $pw = '$argon2i$v=19$m=65536,t=4,p=1$' . $mail->getPassword();
+                var_dump($pw);
+                if($pw != NULL){
+                    password_verify($_POST['password'], $pw) ? null : $formErrors[]= 'Connexion impossible, verifier vos identifiants'; 
+                }
             }
         }
+
         if(count($formErrors) > 0){
             throw new Exception(implode("<br />", $formErrors));
         }
