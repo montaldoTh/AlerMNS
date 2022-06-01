@@ -21,7 +21,9 @@ function postMessage(){
         
         $result = json_encode(['status'=>'success']);
     }
+    $idForRedirect = $_POST['author'];
     echo $result;
+    header("Location: profil.php?id=$idForRedirect");
 }
 
 function getMessage(){

@@ -4,14 +4,18 @@ function getMessage(){
 
     reqAjax.onload = function() {
         const resultat = JSON.parse(reqAjax.responseText);
-        console.log(resultat);
         const html = resultat.reverse().map(function(message){
             `
-            <div class="message">
-                <span class="date">${message.sending_date.substring(11, 16)}</span>
-                <span class="author">${message.lastName} ${message.firstName}</span> :
-                <span class="content">${message.content}</span>
-            </div>` 
+            <div class="messages">
+                <div class="userBox">
+                    <span>${message.lastName} ${message.firstName}</span>
+                </div>
+                <div class="messageBox">
+                    <p>${message.content}</p>
+                    <span>${message.sending_date.substring(11, 16)}</span>
+                </div>
+            </div>
+            ` 
         }).join('');
 
         const message = document.querySelector('.messages');
@@ -24,27 +28,31 @@ function getMessage(){
     
 }
 
-function postMessage(){
+function postMessage(event){
+    event.preventDefault();
     const author = document.querySelector('#id_users');
     const content = document.querySelector('#content');
     
     const data = new FormData();
     data.append('author', author.value);
     data.append('content', content.value);
-
-    const reqAjax = new XMLHttpRequest();
-    reqAjax.open("POST", "api.php?task=write");
+    if(content.value.length > 0){
+        const reqAjax = new XMLHttpRequest();
+        reqAjax.open("POST", "api.php?task=write");
+    }
+    
+    reqAjax.onload = function(){
+        content.value = '';
+        content.focus();
+        getMessage();
+    };
     reqAjax.send(data);
 }
 
-// reqAjax.onload = function(){
-//     content.value = '';
-//     content.focus();
-//     getMessage();
-// };
+    
 
-document.querySelector('.formUser').addEventListener('submit', postMessage());
+document.querySelector('.formUser').addEventListener('submit', postMessage);
 
-// const interval = window.setInterval(getMessage, 3000);
+const interval = window.setInterval(getMessage, 3000);
 
 getMessage();
