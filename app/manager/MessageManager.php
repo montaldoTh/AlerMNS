@@ -7,7 +7,7 @@ class MessageManager extends Manager{
 
     // Pour l'instant
     public function selectAll(){
-        $sql= 'SELECT * FROM msg_btw_users ORDER BY creation_date DESC';
+        $sql= 'SELECT * FROM msg_btw_users ORDER BY sending_date DESC';
         $req = $this->getPdo()->prepare($sql);
         $req->execute();
         $result = [];
