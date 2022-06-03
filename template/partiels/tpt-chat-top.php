@@ -11,17 +11,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="groupeBar">
+        <!-- <div class="groupeBar">
             <h3>Group List</h3>
             <div><span></span></div>
-        </div>
+        </div> -->
         <div class="userBar">
             <div class="userList">
-                <h3>Users List</h3>
-                <p>Limited at 15</p>
-                <?php foreach($users as $user): ?>
-                <div class="userBox"><span><?= $user->getLastName() . $user->getFirstName()[0]; ?></span></div>
-                <?php endforeach; ?>
+                <h3>Messages Reçus</h3>
+                <div class="users">
+                    
+                </div>
             </div>
         </div>
 

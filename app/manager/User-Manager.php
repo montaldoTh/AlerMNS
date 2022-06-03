@@ -5,7 +5,6 @@ require_once '../app/manager/Manager.php';
 
 class UserManager extends Manager{
 
-
     // Requete SELECT toute la table
     public function selectAll(){
         $sql = 'SELECT * FROM users ORDER BY id ASC LIMIT 15';

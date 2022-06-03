@@ -7,6 +7,9 @@ try{
         if($_GET['task'] == "write"){
             postMessage();
         }
+    }else if(isset($_GET['logged']) && isset($_GET['contact'])){
+        //Liste des utilisateur avec barre recherche si pas trop chiant
+        getPrivateMsg();
     }else{
         getMessage();
     }

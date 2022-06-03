@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){ //Meme manière de faire que dans register-page.php
         }
         $user = $manager->selectByMail($_POST['mail']);
         $id = $user->getId();
-        header("location: /profil.php?id=$id");
+        header("location: /profil.php?logged=$id");
     }catch(Exception $e){
         $message = $e->getMessage();
     }
