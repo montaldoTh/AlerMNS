@@ -21,7 +21,7 @@
 <body>
     <div class="container">
         <div class="groupeBar">
-            <h2 class='liste'><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></h2>
+            <h2 class='liste'>Users List</h2>
             <div><span></span></div>
         </div>
 

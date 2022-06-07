@@ -1,9 +1,9 @@
-<?php 
+<?php
 require '../template/partiels/tpt-top.php'; ?>
-<h1>Alert</h1>  
+
 <div class="formConnexion">
 
-      
+
     <h2>Connexion</h2>
     <form method="post">
         <div class="inputBox">
@@ -12,16 +12,17 @@ require '../template/partiels/tpt-top.php'; ?>
         </div>
         <div class="inputBox">
             <label for="password">Password</label>
-            <input class="inputPassword"type="password" name="password" placeholder="Enter your password">
+            <input class="inputPassword" type="password" name="password" placeholder="Enter your password">
         </div>
         <input type="submit" name="submit" class="logBtn" value="Connexion">
     </form>
-    <?php if (!empty($message)) :?> <!-- On verifie si la variable message dans profil est vide ou non, s'il est rempli l'affiche -->
-    <div class="alert">
-        <?= $message; ?>
-    </div>
-    <?php endif;?>
-    <a href="register-page.php">Pas inscit ? Inscrivez-vous en cliquant ici!</a>    
+    <?php if (!empty($message)) : ?>
+        <!-- On verifie si la variable message dans profil est vide ou non, s'il est rempli l'affiche -->
+        <div class="alert">
+            <?= $message; ?>
+        </div>
+    <?php endif; ?>
+    <a href="register-page.php">Pas inscit ? Inscrivez-vous en cliquant ici!</a>
 </div>
 
 
