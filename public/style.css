@@ -1,9 +1,25 @@
 .container {
   display: flex;
-  flex-direction: column;
+
+  flex-direction: flex-wrap;
 }
+.interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0;
+  justify-content: end;
+  width: 80%;
+  height: 80%;
+}
+.groupeBar {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
 header {
-  padding: 25px 0px; /*Marge verticale*/
+  padding: 20px 0px; /*Marge verticale*/
   background-color: rgba(27, 114, 75, 0.606); /*Couleur de fond*/
   text-align: center; /*texte centré*/
 }
@@ -38,6 +54,7 @@ header {
 }
 h1,
 h2,
+.msg,
 h4 {
   text-align: center;
 }
@@ -50,10 +67,11 @@ h4 {
   background-color: rgba(27, 114, 75, 0.606);
 }
 
-body {
+body,
+html {
   margin: 0;
   padding: 0;
-  background-color: #57a46b9b;
+  background-color: #c7d6ca9b;
 }
 
 .logBtn,
@@ -157,15 +175,10 @@ button:active {
 footer {
   background: rgb(233, 236, 233);
   width: 100%;
-  bottom: 0;
-  position: fixed;
-  height: 5%;
+  text-align: center;
+  height: 10%;
 }
-#date_time {
-  position: absolute;
-  bottom: 0;
-  right: 2%;
-}
+
 .containerGeneral {
   display: flex;
   flex-direction: column;
@@ -225,10 +238,10 @@ footer {
 }
 .picture {
   margin-top: 1%;
-  width: 60px;
+  width: 5em;
   border: 2px solid black;
   border-radius: 50%;
-  height: 60px;
+  height: 5em;
   background-color: rgba(118, 214, 171, 0.606);
 }
 /* .userInput {
@@ -257,7 +270,23 @@ footer {
   text-align: left;
   margin-left: 2%;
 }
+.date_time {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
 .pseudo2 {
   width: 100%;
   text-align: right;
+}
+.msgSend {
+  width: 100%;
+  height: 150px;
+}
+.formUser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
 }

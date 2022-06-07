@@ -1,4 +1,4 @@
-<?php require '../template/partiels/tpt-top.php' ?>
+<?php require '../template/partiels/tpt-chat-top.php' ?>
 
 
 <div class="message_container ">
@@ -6,6 +6,7 @@
     </div>
     <div class="message">
         <div class="card">
+            <h3 class="msg">Messages Reçus</h3>
             <div class="pseudo">
                 <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
             </div>
@@ -14,10 +15,6 @@
             </div>
             <span class="time">22/06/2021</span>
         </div>
-
-
-
-
     </div>
 </div>
 <div class="message_container message_container1">
@@ -25,6 +22,7 @@
     </div>
     <div class="message">
         <div class="card">
+            <h3 class="msg">Messages Envoyées</h3>
             <div class="pseudo pseudo2">
                 <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
             </div>
@@ -33,10 +31,6 @@
             </div>
             <span class="time time2">22/06/2021</span>
         </div>
-
-
-
-
     </div>
 </div>
 
@@ -46,17 +40,18 @@
 
     <form class="formUser" action="post">
         <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
-        <textarea name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
+        <textarea class='msgSend' name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
     </form>
 </div>
-</div>
 
 
 
 
 
 
-<?php require '../template/partiels/tpt-bot.php' ?>
+
+
+<?php require '../template/partiels/tpt-chat-bot.php' ?>
 
 
 

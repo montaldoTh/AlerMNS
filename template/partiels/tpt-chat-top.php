@@ -19,6 +19,10 @@
 </header>
 
 <body>
-
-
     <div class="container">
+        <div class="groupeBar">
+            <h2 class='liste'><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></h2>
+            <div><span></span></div>
+        </div>
+
+        <div class="interface">
