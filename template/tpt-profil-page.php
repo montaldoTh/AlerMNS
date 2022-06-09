@@ -41,7 +41,11 @@
     <form class="formUser" action="post">
         <label><?= ucfirst($user->getLastName()) . " " . ucfirst($user->getFirstName()) ?></label>
         <textarea class='msgSend' name="texte" id="texte" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
-        <button>Send!</button>
+        <button>
+            <div class="left"></div>
+            Send!
+            <div class="right"></div>
+        </button>
     </form>
 </div>
 

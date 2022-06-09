@@ -302,13 +302,6 @@ textarea {
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
 
-:root {
-  --text-color: hsla(210, 50%, 85%, 1);
-  --shadow-color: hsla(210, 40%, 52%, 0.4);
-  --btn-color: hsl(210, 80%, 42%);
-  --bg-color: #268154;
-}
-
 button {
   position: relative;
   padding: 10px 20px;
@@ -322,7 +315,7 @@ button {
   font-size: 30px;
   color: white;
 
-  background-color: #2b6777;
+  background-color: rgba(27, 114, 75, 0.606);
   box-shadow: #676a6b 2px 2px 22px;
   border-radius: 4px;
   z-index: 0;
@@ -335,7 +328,6 @@ button:focus {
 }
 
 button::after {
-  /* content: var(--content); */
   display: block;
   position: absolute;
   white-space: nowrap;
@@ -366,7 +358,7 @@ button::after {
   top: -30px;
   left: calc(-66% - 20px);
 
-  background-color: var(--bg-color);
+  background-color: black;
   color: transparent;
   transition: transform 0.4s ease-out;
   transform: translate(0, -90%) rotate(0deg);
@@ -390,28 +382,52 @@ button::before {
   pointer-events: none;
   opacity: 0.6;
   background: radial-gradient(
+      circle at 2% 20%,
+      transparent 0,
+      transparent 5px,
+      #ffff 6px,
+      #ffff 7px,
+      transparent 7px
+    ),
+    radial-gradient(
       circle at 20% 35%,
       transparent 0,
       transparent 2px,
-      var(--text-color) 3px,
-      var(--text-color) 4px,
+      #ffff 3px,
+      #ffff 4px,
       transparent 4px
+    ),
+    radial-gradient(
+      circle at 25% 25%,
+      transparent 0,
+      transparent 5px,
+      #ffff 6px,
+      #ffff 7px,
+      transparent 7px
     ),
     radial-gradient(
       circle at 75% 44%,
       transparent 0,
       transparent 2px,
-      var(--text-color) 3px,
-      var(--text-color) 4px,
+      #ffff 3px,
+      #ffff 4px,
       transparent 4px
     ),
     radial-gradient(
       circle at 46% 52%,
       transparent 0,
       transparent 4px,
-      var(--text-color) 5px,
-      var(--text-color) 6px,
+      #ffff 5px,
+      #ffff 6px,
       transparent 6px
+    ),
+    radial-gradient(
+      circle at 85% 60%,
+      transparent 0,
+      transparent 8px,
+      #ffff 9px,
+      #ffff 10px,
+      transparent 10px
     );
 
   width: 100%;
