@@ -11,9 +11,6 @@ if(isset($_GET['logged'])){
     // $managerM = new MessageManager;
     // $messages = $managerM->selectMsgNSndr();
 
-}else{
-    header('Location: ../');
-
 }
 
 require '../template/tpt-profil-page.php';

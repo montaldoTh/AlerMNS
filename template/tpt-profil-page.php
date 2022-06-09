@@ -2,7 +2,10 @@
 
 <div class="chattingBox">
     <div class="messagesBox">
-        <h5>Alert</h5>
+        <h1>Alert</h1>
+            <?php if(!isset($_GET['contact'])): ?>
+
+            <?php else: ?>
             <div class="messages">
                 <div class="userBox">
                     <span> Nom prénom </span>
@@ -12,13 +15,15 @@
                     <span> Date d'envoie</span>
                 </div>
             </div>
+            <?php endif; ?>
     </div>
     <div class="userInput">
-        <form class="formUser" action="api.php?task=write" method="POST">
+        <!-- <form class="formUser" action="api.php?task=write" method="POST"> -->
+        <form class="formUser" onsubmit="return false;">
             <div class="userInfo">
-                <label><?= ucfirst($loggedUser->getLastName()) . " " . ucfirst($loggedUser->getFirstName()) ?></label>
+                <span><?= ucfirst($loggedUser->getLastName()) . " " . ucfirst($loggedUser->getFirstName()) ?></span>
                 <span>online</span>
-                <input type="hidden" name="author" id="idLogged" value="<?= $loggedUser->getId() ?>">
+                <input type="hidden" name="logged" id="idLogged" value="<?= $loggedUser->getId() ?>">
             </div>
             <textarea name="content" id="content" cols="30" rows="2" placeholder="Ecrivez votre message"></textarea>
             <button type="submit">Envoyer</button>
