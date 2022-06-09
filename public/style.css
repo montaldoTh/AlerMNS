@@ -16,18 +16,16 @@
   display: flex;
   flex-direction: column;
   width: 20%;
+  border: 2px solid rgba(43, 99, 220, 0.355);
+  border-radius: 10px;
 }
 
 header {
-  padding: 20px 0px; /*Marge verticale*/
-  background-color: rgba(27, 114, 75, 0.606); /*Couleur de fond*/
-  text-align: center; /*texte centré*/
-}
-.centercolumn {
-  width: 100%; /*Taille de la colonne centrée moins le padding*/
-
-  margin: auto; /*centrer la colonne*/
-  padding: 25px; /*margin interne*/
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 10px;
 }
 
 .inputMail,
@@ -39,7 +37,6 @@ header {
   height: 3vh;
   outline: 0;
   font-size: 14px;
-  width: 25vh;
 }
 
 .formConnexion,
@@ -49,8 +46,10 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40vh;
+  width: 20vw;
   margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 h1,
 h2,
@@ -72,16 +71,6 @@ html {
   margin: 0;
   padding: 0;
   background-color: #c7d6ca9b;
-}
-
-.logBtn,
-.regBtn {
-  margin: auto;
-  color: white;
-  border-radius: 6px;
-  margin: 5px;
-  padding: 7px;
-  background-color: rgba(5, 46, 5, 0.276);
 }
 
 label {
@@ -150,23 +139,23 @@ a {
   transform: translateX(-50%);
   top: 10px;
 }
-button {
-  display: block;
-  margin: 30px auto;
-  outline: 0;
-  background: rgb(250, 165, 9);
-  width: 90%;
-  border: 0;
-  padding: 15px;
-  border-radius: 3px;
-  font-size: 20px;
-  cursor: pointer;
+.logBtn,
+.regBtn {
+  width: 100%;
+  margin-top: 5%;
+  color: white;
+  padding: 5%;
+  border-radius: 6px;
+  background-color: rgba(5, 46, 5, 0.276);
 }
-button:hover {
-  background: rgb(252, 181, 49);
+
+.logBtn:hover,
+.regBtn:hover {
+  background: rgba(205, 255, 205, 0.668);
+  color: black;
 }
-button:active {
-  background: rgb(250, 165, 9);
+.regBtn:active {
+  background: rgb(237, 226, 208);
 }
 footer {
   background: rgb(233, 236, 233);
@@ -289,6 +278,7 @@ footer {
   margin: auto;
 }
 textarea {
+  margin-bottom: 5%;
   font-size: 15px;
   border: 2px solid black;
   padding: 2rem 1rem;
@@ -298,86 +288,31 @@ textarea {
   border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 25s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
     1;
 }
-/*--------------------------------------button send-------------------------------------*/
+/*--------------------------------------.btnSend send-------------------------------------*/
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
 
-button {
+.btnSend {
   position: relative;
-  padding: 10px 20px;
-  border: none;
-  background: none;
-  cursor: pointer;
-
   font-family: "Source Code Pro";
-  font-weight: 200%;
-
-  font-size: 30px;
+  padding: 5%;
+  font-size: 20px;
   color: white;
-
+  margin-bottom: 5%;
   background-color: rgba(27, 114, 75, 0.606);
   box-shadow: #676a6b 2px 2px 22px;
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 0;
   overflow: hidden;
 }
-
-button:focus {
-  outline-color: transparent;
+.btnSend:hover {
+  background-color: rgba(118, 214, 171, 0.606);
   box-shadow: #676a6b 2px 2px 22px;
-}
-
-button::after {
-  display: block;
-  position: absolute;
-  white-space: nowrap;
-  padding: 40px 40px;
-  pointer-events: none;
-}
-
-button::after {
-  font-weight: 200;
-  top: -30px;
-  left: -20px;
-}
-
-.right,
-.left {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-.right {
-  left: 66%;
-}
-.left {
-  right: 66%;
-}
-.right::after {
-  top: -30px;
-  left: calc(-66% - 20px);
-
-  background-color: black;
-  color: transparent;
-  transition: transform 0.4s ease-out;
-  transform: translate(0, -90%) rotate(0deg);
-}
-
-button:hover .right::after {
-  transform: translate(0, -47%) rotate(0deg);
-}
-
-button .right:hover::after {
-  transform: translate(0, -50%) rotate(-7deg);
-}
-
-button .left:hover ~ .right::after {
-  transform: translate(0, -50%) rotate(7deg);
+  color: black;
 }
 
 /* bubbles */
-button::before {
+.btnSend::before {
   content: "";
   pointer-events: none;
   opacity: 0.6;
@@ -514,19 +449,19 @@ header {
   opacity: 0;
 }
 .letter01 {
-  animation: letters 3s ease 0000ms forwards;
+  animation: letters 5s ease 0050ms forwards;
 }
 .letter02 {
-  animation: letters 3s ease 0500ms forwards;
+  animation: letters 5s ease 0500ms forwards;
 }
 .letter03 {
-  animation: letters 3s ease 1000ms forwards;
+  animation: letters 5s ease 1000ms forwards;
 }
 .letter04 {
-  animation: letters 3s ease 1500ms forwards;
+  animation: letters 5s ease 1500ms forwards;
 }
 .letter05 {
-  animation: letters 3s ease 2000ms forwards;
+  animation: letters 5s ease 2000ms forwards;
 }
 @keyframes letters {
   0% {
@@ -537,118 +472,10 @@ header {
   }
 }
 
-.lettre::after {
-  content: "";
-  display: block;
-  background: linear-gradient(
-    45deg,
-    #f9cff3,
-    #d4b6db,
-    #e5d6f2,
-    #c0b6db,
-    #cfcff9
-  );
-  height: 3px;
-  width: 0%;
-  opacity: 0;
-  margin-top: 0.2em;
-  animation: lineWidth 10s ease-in-out forwards;
-}
-@keyframes lineWidth {
-  0% {
-    width: 0%;
-    opacity: 0;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
-  }
-}
-
-.lettre {
-  animation: textAnimated 60s ease infinite;
-}
-@keyframes textAnimated {
-  0% {
-    background: linear-gradient(
-      70deg,
-      #fdd9cd,
-      #e3bcb8,
-      #fad6db,
-      #e3b8d3,
-      #f9cdfd
-    );
-    background-position: -12em 0;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  50% {
-    background: linear-gradient(
-      85deg,
-      #fdd9cd,
-      #e3bcb8,
-      #fad6db,
-      #e3b8d3,
-      #f9cdfd
-    );
-    background-position: 0 0;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  100% {
-    background: linear-gradient(
-      70deg,
-      #fdd9cd,
-      #e3bcb8,
-      #fad6db,
-      #e3b8d3,
-      #f9cdfd
-    );
-    background-position: -12em;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-
 .lettre::before {
   content: "Alert";
   display: block;
   position: absolute;
   width: 100%;
-  animation: scintillement 10s ease-in 10s infinite;
-}
-@keyframes scintillement {
-  0% {
-    background: linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.3),
-        rgba(200, 200, 200, 0.3)
-      )
-      no-repeat;
-    background-clip: text;
-    background-position: -12em 0;
-  }
-  25% {
-    background: linear-gradient(
-        75deg,
-        rgba(255, 255, 255, 0.5),
-        rgba(200, 200, 200, 0.5)
-      )
-      no-repeat;
-    background-clip: text;
-    background-position: 12em 0;
-  }
-  30% {
-    background: linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0),
-        rgba(200, 200, 200, 0)
-      )
-      no-repeat;
-    background-clip: text;
-    background-position: 0 0;
-  }
+  animation: scintillement 5s ease-in 5s infinite;
 }

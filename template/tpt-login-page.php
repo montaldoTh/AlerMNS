@@ -14,7 +14,7 @@ require '../template/partiels/tpt-top.php'; ?>
             <label for="password">Password</label>
             <input class="inputPassword" type="password" name="password" placeholder="Enter your password">
         </div>
-        <input type="submit" name="submit" class="logBtn" value="Connexion">
+        <button type="submit" name="submit" class="logBtn" value="Connexion">Connexion</button>
     </form>
     <?php if (!empty($message)) : ?>
         <!-- On verifie si la variable message dans profil est vide ou non, s'il est rempli l'affiche -->

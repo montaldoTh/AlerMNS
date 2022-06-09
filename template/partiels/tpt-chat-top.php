@@ -9,11 +9,6 @@
     <title>Alert</title>
 </head>
 <header>
-    <!--<div id="content">
-        <div class="centercolumn">
-            <h1>Alert</h1>
-        </div>
-    </div>-->
     <div id="wrapper">
         <p classe="lettre"><span class="letter01">A</span><span class="letter02">l</span><span class="letter03">e</span><span class="letter04">r</span><span class="letter05">t</span></p>
     </div>
