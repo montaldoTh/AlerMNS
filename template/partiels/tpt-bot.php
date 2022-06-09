@@ -1,6 +1,6 @@
 </div>
 <footer class="footer">
-    <div>© 2020 Copyright:
+    <div>© 2022 Copyright:
         <span id="date_time"></span>
 </footer>
 
