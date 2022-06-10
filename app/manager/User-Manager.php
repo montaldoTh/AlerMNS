@@ -7,7 +7,7 @@ class UserManager extends Manager{
 
     // Requete SELECT toute la table
     public function selectAll(){
-        $sql = 'SELECT * FROM users ORDER BY id ASC LIMIT 15';
+        $sql = 'SELECT users.id, users.firstName, users.lastName, users.registerDate FROM users ORDER BY registerDate ASC';
         $req = $this->getPdo()->prepare($sql);
         $req->execute();
         $result = [];
@@ -73,7 +73,7 @@ class UserManager extends Manager{
     // UPDATE / Met a jour
     public function update(int $id, string $lastName, string $firstName, string $mail, string $password, string $typeUser, int $id_type_user){
         $sql="UPDATE users SET lastName = :lastName, firstName= :firstName, email= :email, creation_date= NOW() ,password= :password , type_user = :type_user , id_type_user = :id_type_user, password= :password WHERE id =  :id";
-        $hash = password_hash($password, PASSWORD_ARGON2I);
+        $hash =  str_replace('$argon2i$v=19$m=65536,t=4,p=1$', '', password_hash($password, PASSWORD_ARGON2I));
 
         $req = $this->getPdo()->prepare($sql);
         $req->execute([

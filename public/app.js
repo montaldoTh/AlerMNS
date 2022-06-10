@@ -12,12 +12,14 @@ function getMessage(){
             const html = resultat.reverse().map(function(message){
                 return `
                 <div class="messages">
-                    <div class="userBox">
-                        <span>${message.senderLstName} ${message.senderFstName}</span>
-                    </div>
-                    <div class="messageBox">
-                        <p>${message.content}</p>
-                        <span>${message.sending_date.substring(11, 16)}</span>
+                    <div class="card">
+                        <div class="userBox">
+                            <span>${message.senderLstName} ${message.senderFstName}</span>  
+                        </div>
+                        <div class="messageBox">
+                            <p>${message.content}</p>
+                        </div>
+                        <span class="sendingBox">${message.sending_date.substring(11, 16)}</span>
                     </div>
                 </div>
                 <br/>
@@ -32,13 +34,6 @@ function getMessage(){
     
         reqAjax.send();
     }
-}
-
-function trieUserList(){
-    const liste = document.querySelectorAll('.userBox > input')
-    const result = Array.from(liste).map(function(item){
-        return console.log('je lis : ' + item.value);
-    })
 }
 
 function getUserList(){
@@ -102,11 +97,11 @@ async function postMessage(event){
         content.value = "";
         content.focus();
         getMessage();
+        getUserList();
     }) 
 }
 
 getUserList();
 getMessage();
 
-document.querySelector('.formUser').addEventListener('submit', postMessage);
-// const interval = window.setInterval(getMessage, 3000);
+const interval = window.setInterval(getMessage, 3000);

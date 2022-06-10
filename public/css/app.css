@@ -1,4 +1,4 @@
-.groupeBar, .userBar{
+/* .groupeBar, .userBar{
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
@@ -61,4 +61,483 @@
 .userBar{
     background-color: darkgray;
     border: 0 none;
-}
+} */
+.container {
+    display: flex;
+  }
+  .interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    justify-content: end;
+    width: 80%;
+    height: 80%;
+  }
+  .userBar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: 2px solid rgba(43, 99, 220, 0.355);
+    border-radius: 10px;
+  }
+  
+  header {
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 10px;
+  }
+  
+  .inputMail,
+  .inputPassword,
+  .firstName,
+  .lastName {
+    border: 2px solid rgba(43, 99, 220, 0.355);
+    border-radius: 15px;
+    height: 3vh;
+    outline: 0;
+    font-size: 14px;
+  }
+  
+  .formConnexion,
+  .inputBox,
+  .formInscription,
+  .messagesBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  h1,
+  h2,
+  .msg,
+  h4 {
+    text-align: center;
+  }
+  .formConnexion,
+  .formInscription,
+  .mainView {
+    border: 2px solid rgba(43, 99, 220, 0.355);
+    border-radius: 30px;
+    padding: 10vh;
+    background-color: rgba(27, 114, 75, 0.606);
+  }
+  
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    background-color: #c7d6ca9b;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-style: italic;
+  }
+  
+  .choiceRow,
+  .messages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .alert {
+    margin: 7px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+    text-align: left;
+    font-style: italic;
+  }
+  .icone-verif {
+    position: relative;
+  
+    left: 70%;
+    width: 5%;
+  
+    display: none;
+  }
+  .message-alerte {
+    margin: 0px 23px;
+    color: crimson;
+    display: none;
+  }
+  .ligne {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .l1,
+  .l2,
+  .l3 {
+    width: 30%;
+    height: 5px;
+    margin: 15px 5px 20px;
+    position: relative;
+    display: none;
+  }
+  .l1 {
+    background: rgb(182, 182, 13);
+  }
+  .l2 {
+    background: rgb(151, 85, 85);
+  }
+  .l3 {
+    background: green;
+  }
+  .ligne span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+  }
+  .logBtn,
+  .regBtn {
+    width: 100%;
+    margin-top: 5%;
+    color: white;
+    padding: 5%;
+    border-radius: 6px;
+    background-color: rgba(5, 46, 5, 0.276);
+  }
+  
+  .logBtn:hover,
+  .regBtn:hover {
+    background: rgba(205, 255, 205, 0.668);
+    color: black;
+  }
+  .regBtn:active {
+    background: rgb(237, 226, 208);
+  }
+  footer {
+    background: rgb(233, 236, 233);
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    padding-top: 50px;
+    height: 50px;
+  }
+  
+  .containerGeneral {
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    height: 100%;
+  }
+  .containerGeneral {
+    display: flex;
+    flex-direction: row;
+  }
+  .messagesBox {
+    display: flex;
+    margin: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* border: 2px solid rgba(43, 99, 220, 0.355); */
+    /* background-color: rgba(27, 114, 75, 0.606); */
+    width: 50%;
+  }
+  .messagesBoxLogged {
+    display: flex;
+    width: 50%;
+    flex-direction: row-reverse;
+    /* border: 2px solid rgba(43, 99, 220, 0.355); */
+    /* background-color: rgba(27, 114, 75, 0.606); */
+    margin-left: 45%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .messages {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;
+    /* background-color: white; */
+    font-size: 15px;
+    color: black;
+    font-style: italic;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .messageBox {
+    display: flex;
+    padding: 10vh;
+    border: 2px solid rgba(43, 99, 220, 0.355);
+    border-radius: 30px;
+    width: 50%;
+    background-color: rgba(27, 114, 75, 0.606);
+    margin: auto;
+  }
+  .picture {
+    margin-top: 1%;
+    width: 5em;
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 5em;
+    background-color: rgba(118, 214, 171, 0.606);
+  }
+  /* .userInput {
+    border: 2px solid rgba(43, 99, 220, 0.355);
+    border-radius: 15px;
+    height: 20vh;
+    outline: 0;
+    font-size: 14px;
+    width: 80%;
+  } */
+  .userBox {
+    width: 100%;
+    font-size: 25px;
+    margin-top: 2%;
+    color: rgb(101, 25, 25);
+  }
+  .sendingBox {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgb(101, 25, 25);
+    text-align: right;
+    margin-right: 2%;
+  }
+  .sendingBoxLogged {
+    text-align: left;
+    margin-left: 2%;
+  }
+  #date_time {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+  
+  .userBoxLogged {
+    width: 100%;
+    text-align: right;
+  }
+  .msgSend {
+    width: 100%;
+    height: 150px;
+  }
+  .formUser {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+  textarea {
+    margin-bottom: 5%;
+    font-size: 15px;
+    border: 2px solid black;
+    padding: 2rem 1rem;
+    min-height: 3em;
+    resize: both;
+    background: rgba(255, 255, 255, 0.8);
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 25s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
+      1;
+  }
+  /*--------------------------------------.btnSend send-------------------------------------*/
+  
+  @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
+  
+  .btnSend {
+    position: relative;
+    font-family: "Source Code Pro";
+    padding: 5%;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 5%;
+    background-color: rgba(27, 114, 75, 0.606);
+    box-shadow: #676a6b 2px 2px 22px;
+    border-radius: 5px;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .btnSend:hover {
+    background-color: rgba(118, 214, 171, 0.606);
+    box-shadow: #676a6b 2px 2px 22px;
+    color: black;
+  }
+  
+  /* bubbles */
+  .btnSend::before {
+    content: "";
+    pointer-events: none;
+    opacity: 0.6;
+    background: radial-gradient(
+        circle at 2% 20%,
+        transparent 0,
+        transparent 5px,
+        #ffff 6px,
+        #ffff 7px,
+        transparent 7px
+      ),
+      radial-gradient(
+        circle at 20% 35%,
+        transparent 0,
+        transparent 2px,
+        #ffff 3px,
+        #ffff 4px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle at 25% 25%,
+        transparent 0,
+        transparent 5px,
+        #ffff 6px,
+        #ffff 7px,
+        transparent 7px
+      ),
+      radial-gradient(
+        circle at 75% 44%,
+        transparent 0,
+        transparent 2px,
+        #ffff 3px,
+        #ffff 4px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle at 46% 52%,
+        transparent 0,
+        transparent 4px,
+        #ffff 5px,
+        #ffff 6px,
+        transparent 6px
+      ),
+      radial-gradient(
+        circle at 85% 60%,
+        transparent 0,
+        transparent 8px,
+        #ffff 9px,
+        #ffff 10px,
+        transparent 10px
+      );
+  
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    animation: bubbles 3s linear infinite both;
+  }
+  
+  @keyframes bubbles {
+    from {
+      transform: translate();
+    }
+    to {
+      transform: translate(0, -66.666%);
+    }
+  }
+  
+  /*----------------------------------header------------------------------------*/
+  /* Styles généraux */
+  
+  header {
+    transition: background-color 1s ease;
+    background: linear-gradient(
+      30deg,
+      #2b6777,
+      #52ab98,
+      #69c4b0,
+      #b1bcc4,
+      #c8d8e4,
+      #f2f2f2,
+      #ffff,
+      #f2f2f2,
+      #c8d8e4,
+      #b1bcc4,
+      #69c4b0,
+      #52ab98,
+      #2b6777
+    );
+    background-size: auto;
+    background-size: 100% 150%;
+    animation: degradeFond 30s ease infinite;
+  }
+  @keyframes degradeFond {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  
+  /* Réglages du bloc de texte général */
+  #wrapper {
+    margin: auto;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+  }
+  #wrapper .lettre {
+    white-space: normal;
+    display: inline-block;
+    font-size: 6em;
+    font-weight: 200;
+    background: linear-gradient(
+      30deg,
+      #e5e0f9,
+      #c5c7db,
+      #eaedf3,
+      #c5d2db,
+      #e0f6f9
+    );
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+  }
+  
+  /* Animations des lettres */
+  .lettre span {
+    opacity: 0;
+  }
+  .letter01 {
+    animation: letters 5s ease 0050ms forwards;
+  }
+  .letter02 {
+    animation: letters 5s ease 0500ms forwards;
+  }
+  .letter03 {
+    animation: letters 5s ease 1000ms forwards;
+  }
+  .letter04 {
+    animation: letters 5s ease 1500ms forwards;
+  }
+  .letter05 {
+    animation: letters 5s ease 2000ms forwards;
+  }
+  @keyframes letters {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .lettre::before {
+    content: "Alert";
+    display: block;
+    position: absolute;
+    width: 100%;
+    animation: scintillement 5s ease-in 5s infinite;
+  }
+  
